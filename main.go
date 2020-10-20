@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"strings"
 
 	"github.com/ndgndg91/go-study/greetings"
 )
@@ -23,4 +24,33 @@ func main() {
 
 	fmt.Println(fullName)
 	fmt.Println(address)
+
+	fmt.Println(multiply(2, 2))
+
+	lenOfName, upperName := lenAndUpper("ndgndg91")
+	fmt.Println(lenOfName, upperName)
+
+	repeatMe("a", "b", "c", "d", "e", "f")
+
+	length, upperCase := lenAndUpperReturnVariable("giri")
+	fmt.Println(length, upperCase)
+}
+
+func lenAndUpper(name string) (int, string) {
+	return len(name), strings.ToUpper(name)
+}
+
+func lenAndUpperReturnVariable(name string) (length int, upper string) { // naked return
+	defer fmt.Println("lenAndUpperReturnVariable is Done.") // after the function, defer clause trigger.
+	length = len(name)
+	upper = strings.ToUpper(name)
+	return
+}
+
+func multiply(a int, b int) int {
+	return a * b
+}
+
+func repeatMe(words ...string) {
+	fmt.Println(words)
 }
