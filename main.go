@@ -40,4 +40,6 @@ func main() {
 	fmt.Println(syntax.Sum2(5, 6, 7, 8, 9))
 
 	fmt.Println(syntax.CanIDrink(20))
+
+	fmt.Println(syntax.WhatIsGrade(91))
 }
