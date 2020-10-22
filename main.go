@@ -8,10 +8,17 @@ import (
 )
 
 func main() {
+	// syntax.PrintAddress()
+	syntax.PrintPointMemory()
+}
+
+func helloGo() {
 	fmt.Println("hello go!")
 	greetings.SayHi()
 	greetings.SayBye()
+}
 
+func variable() {
 	const name string = "남동길"
 	// name = "김철수" 상수는 변경이 불가능
 	fmt.Println(name)
@@ -24,7 +31,9 @@ func main() {
 
 	fmt.Println(fullName)
 	fmt.Println(address)
+}
 
+func functions() {
 	fmt.Println(syntax.Multiply(2, 2))
 
 	lenOfName, upperName := syntax.LenAndUpper("ndgndg91")
@@ -38,8 +47,12 @@ func main() {
 	fmt.Println(syntax.Sum(1, 2, 3, 4, 5))
 
 	fmt.Println(syntax.Sum2(5, 6, 7, 8, 9))
+}
 
+func ifStatement() {
 	fmt.Println(syntax.CanIDrink(20))
+}
 
+func switchStatement() {
 	fmt.Println(syntax.WhatIsGrade(91))
 }
