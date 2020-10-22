@@ -34,6 +34,10 @@ func main() {
 
 	length, upperCase := lenAndUpperReturnVariable("giri")
 	fmt.Println(length, upperCase)
+
+	fmt.Println(sum(1, 2, 3, 4, 5))
+
+	fmt.Println(sum2(5, 6, 7, 8, 9))
 }
 
 func lenAndUpper(name string) (int, string) {
@@ -53,4 +57,22 @@ func multiply(a int, b int) int {
 
 func repeatMe(words ...string) {
 	fmt.Println(words)
+}
+
+func sum(numbers ...int) int {
+	var total int = 0
+	for _, number := range numbers { // '_' -> ignore
+		total += number
+	}
+
+	return total
+}
+
+func sum2(numbers ...int) int {
+	var total int = 0
+	for i := 0; i < len(numbers); i++ {
+		total += numbers[i]
+	}
+
+	return total
 }
