@@ -2,9 +2,9 @@ package main
 
 import (
 	"fmt"
-	"strings"
 
 	"github.com/ndgndg91/go-study/greetings"
+	"github.com/ndgndg91/go-study/syntax"
 )
 
 func main() {
@@ -25,54 +25,17 @@ func main() {
 	fmt.Println(fullName)
 	fmt.Println(address)
 
-	fmt.Println(multiply(2, 2))
+	fmt.Println(syntax.Multiply(2, 2))
 
-	lenOfName, upperName := lenAndUpper("ndgndg91")
+	lenOfName, upperName := syntax.LenAndUpper("ndgndg91")
 	fmt.Println(lenOfName, upperName)
 
-	repeatMe("a", "b", "c", "d", "e", "f")
+	syntax.RepeatMe("a", "b", "c", "d", "e", "f")
 
-	length, upperCase := lenAndUpperReturnVariable("giri")
+	length, upperCase := syntax.LenAndUpperReturnVariable("giri")
 	fmt.Println(length, upperCase)
 
-	fmt.Println(sum(1, 2, 3, 4, 5))
+	fmt.Println(syntax.Sum(1, 2, 3, 4, 5))
 
-	fmt.Println(sum2(5, 6, 7, 8, 9))
-}
-
-func lenAndUpper(name string) (int, string) {
-	return len(name), strings.ToUpper(name)
-}
-
-func lenAndUpperReturnVariable(name string) (length int, upper string) { // naked return
-	defer fmt.Println("lenAndUpperReturnVariable is Done.") // after the function, defer clause trigger.
-	length = len(name)
-	upper = strings.ToUpper(name)
-	return
-}
-
-func multiply(a int, b int) int {
-	return a * b
-}
-
-func repeatMe(words ...string) {
-	fmt.Println(words)
-}
-
-func sum(numbers ...int) int {
-	var total int = 0
-	for _, number := range numbers { // '_' -> ignore
-		total += number
-	}
-
-	return total
-}
-
-func sum2(numbers ...int) int {
-	var total int = 0
-	for i := 0; i < len(numbers); i++ {
-		total += numbers[i]
-	}
-
-	return total
+	fmt.Println(syntax.Sum2(5, 6, 7, 8, 9))
 }
