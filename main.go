@@ -38,4 +38,6 @@ func main() {
 	fmt.Println(syntax.Sum(1, 2, 3, 4, 5))
 
 	fmt.Println(syntax.Sum2(5, 6, 7, 8, 9))
+
+	fmt.Println(syntax.CanIDrink(20))
 }
