@@ -8,8 +8,7 @@ import (
 )
 
 func main() {
-	// syntax.PrintAddress()
-	syntax.PrintPointMemory()
+
 }
 
 func helloGo() {
@@ -55,4 +54,19 @@ func ifStatement() {
 
 func switchStatement() {
 	fmt.Println(syntax.WhatIsGrade(91))
+}
+
+func pointer() {
+	syntax.PrintAddress()
+	syntax.PrintPointMemory()
+}
+
+func arrayAndSlice() {
+	names := syntax.GetNames()
+	fmt.Println(names)
+	// names = append(names, "슬라이스 불가능")
+	var sliceArray []string = syntax.SliceTest()
+	fmt.Println(sliceArray)
+	sliceArray = append(sliceArray, "sliceTest")
+	fmt.Println(sliceArray)
 }
