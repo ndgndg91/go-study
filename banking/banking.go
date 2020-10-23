@@ -1,6 +1,9 @@
 package banking
 
-import "errors"
+import (
+	"errors"
+	"fmt"
+)
 
 // Account : public struct
 // start Upper case is Public, start lower case is private
@@ -11,7 +14,7 @@ type Account struct { //public struct
 	balance int    //private field
 }
 
-// NewAccount :
+// NewAccount : this function same as constructor in Java
 func NewAccount(owner string) *Account {
 	account := Account{owner: owner, balance: 0}
 	return &account
@@ -41,4 +44,9 @@ func (a *Account) Withdraw(amount int) error {
 
 	a.balance -= amount
 	return nil // nil is same as null in Java
+}
+
+// same as ToString in Java
+func (a Account) String() string {
+	return fmt.Sprint(a.owner, "'s account. Has: ", a.balance)
 }
