@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"log"
 
 	"github.com/ndgndg91/go-study/banking"
 	"github.com/ndgndg91/go-study/facade"
@@ -25,5 +26,15 @@ func syntaxPractice() {
 
 func bank() {
 	account := banking.NewAccount("남동길")
+	fmt.Println(account)
+	account.Deposit(100)
+	fmt.Println(account.Balance())
+	fmt.Println(account)
+
+	err := account.Withdraw(200) // this code have to handle error
+	if err != nil {
+		log.Fatalln(err) // this kill the program
+	}
+
 	fmt.Println(account)
 }
