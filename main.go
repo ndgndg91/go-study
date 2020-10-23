@@ -6,10 +6,11 @@ import (
 
 	"github.com/ndgndg91/go-study/banking"
 	"github.com/ndgndg91/go-study/facade"
+	"github.com/ndgndg91/go-study/mydict"
 )
 
 func main() {
-	bank()
+	dictionary()
 }
 
 func syntaxPractice() {
@@ -37,4 +38,17 @@ func bank() {
 	}
 
 	fmt.Println(account)
+}
+
+func dictionary() {
+	dictionary := mydict.Dictionary{"first": "First Word"}
+	dictionary["hello"] = "hello"
+	fmt.Println(dictionary)
+
+	definition, err := dictionary.Search("second")
+	if err != nil {
+		fmt.Println(err)
+	} else {
+		fmt.Println(definition)
+	}
 }
