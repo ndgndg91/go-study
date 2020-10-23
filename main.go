@@ -1,8 +1,17 @@
 package main
 
-import "github.com/ndgndg91/go-study/facade"
+import (
+	"fmt"
+
+	"github.com/ndgndg91/go-study/banking"
+	"github.com/ndgndg91/go-study/facade"
+)
 
 func main() {
+	bank()
+}
+
+func syntaxPractice() {
 	facade.HelloGo()
 	facade.Variable()
 	facade.Functions()
@@ -12,4 +21,9 @@ func main() {
 	facade.ArrayAndSlice()
 	facade.MapFunc()
 	facade.StructFunc()
+}
+
+func bank() {
+	account := banking.NewAccount("남동길")
+	fmt.Println(account)
 }
