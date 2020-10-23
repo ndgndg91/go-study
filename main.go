@@ -63,4 +63,24 @@ func dictionary() {
 	} else {
 		fmt.Println(definition)
 	}
+
+	updateErr := dictionary.Update("hello", "Updated Greeting")
+	if updateErr != nil {
+		fmt.Println(updateErr)
+	}
+
+	updatedDefinition, afterUpdatedSearchErr := dictionary.Search("hello")
+	if afterUpdatedSearchErr != nil {
+		fmt.Println(afterUpdatedSearchErr)
+	} else {
+		fmt.Println(updatedDefinition)
+	}
+
+	cantUpdateErr := dictionary.Update("non-exists", "try update")
+	if cantUpdateErr != nil {
+		fmt.Println(cantUpdateErr)
+	}
+
+	dictionary.Delete("hello")
+	fmt.Println(dictionary)
 }
