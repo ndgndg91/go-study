@@ -70,3 +70,14 @@ func arrayAndSlice() {
 	sliceArray = append(sliceArray, "sliceTest")
 	fmt.Println(sliceArray)
 }
+
+func mapFunc() {
+	var myMap = syntax.NewMap()
+	myMap[100] = "paul"
+	fmt.Println(myMap)
+	myMap[1] = "덮어쓰기"
+	fmt.Println(myMap)
+
+	syntax.AddToMap(myMap, 50, "내가 만든 function")
+	syntax.PrintMapUsingRange(myMap)
+}
