@@ -45,9 +45,21 @@ func dictionary() {
 	dictionary["hello"] = "hello"
 	fmt.Println(dictionary)
 
-	definition, err := dictionary.Search("second")
+	definition, err := dictionary.Search("first")
 	if err != nil {
 		fmt.Println(err)
+	} else {
+		fmt.Println(definition)
+	}
+
+	addErr := dictionary.Add("hello", "Greeting")
+	if addErr != nil {
+		fmt.Println("addErr", addErr)
+	}
+
+	definition, helloSearchErr := dictionary.Search("hello")
+	if helloSearchErr != nil {
+		fmt.Println(helloSearchErr)
 	} else {
 		fmt.Println(definition)
 	}
