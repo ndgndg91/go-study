@@ -8,10 +8,11 @@ import (
 	"github.com/ndgndg91/go-study/channel"
 	"github.com/ndgndg91/go-study/facade"
 	"github.com/ndgndg91/go-study/mydict"
+	"github.com/ndgndg91/go-study/urlchecker"
 )
 
 func main() {
-
+	urlchecker.HitURLUsingRoutine()
 }
 
 func goRoutineAndChannel() {
