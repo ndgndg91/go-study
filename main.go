@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"log"
+	"os"
 	"strings"
 
 	"github.com/labstack/echo"
@@ -14,6 +15,8 @@ import (
 	"github.com/ndgndg91/go-study/mydict"
 	"github.com/ndgndg91/go-study/urlchecker"
 )
+
+const fileName = "jobs.csv"
 
 func main() {
 	// Echo instance
@@ -29,7 +32,6 @@ func main() {
 
 	// Start server
 	e.Logger.Fatal(e.Start(":1323"))
-	indeed.Scrape("java")
 }
 
 // Handler
@@ -38,9 +40,11 @@ func handleHome(c echo.Context) error {
 }
 
 func handleScrape(c echo.Context) error {
+	defer os.Remove(fileName)
 	term := strings.ToLower(strings.Join(strings.Fields(strings.TrimSpace(c.FormValue("term"))), " "))
 	fmt.Println(term)
-	return nil
+	indeed.Scrape(term)
+	return c.Attachment(fileName, fileName)
 }
 
 func indeedExtractStart() {
