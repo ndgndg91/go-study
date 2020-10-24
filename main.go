@@ -5,12 +5,17 @@ import (
 	"log"
 
 	"github.com/ndgndg91/go-study/banking"
+	"github.com/ndgndg91/go-study/channel"
 	"github.com/ndgndg91/go-study/facade"
 	"github.com/ndgndg91/go-study/mydict"
 )
 
 func main() {
 
+}
+
+func goRoutineAndChannel() {
+	channel.ChannelPractice()
 }
 
 func syntaxPractice() {

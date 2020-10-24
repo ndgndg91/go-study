@@ -3,15 +3,15 @@ package facade
 import (
 	"fmt"
 
-	"github.com/ndgndg91/go-study/greetings"
+	"github.com/ndgndg91/go-study/hello"
 	"github.com/ndgndg91/go-study/syntax"
 )
 
 // HelloGo : hello Go!
 func HelloGo() {
 	fmt.Println("hello go!")
-	greetings.SayHi()
-	greetings.SayBye()
+	hello.SayHi()
+	hello.SayBye()
 }
 
 // Variable : practice variable
