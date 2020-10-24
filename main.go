@@ -13,11 +13,11 @@ import (
 )
 
 func main() {
-	indeedExtractStart()
+	indeed.Scrape("java")
 }
 
 func indeedExtractStart() {
-	indeed.Start()
+	indeed.Scrape("java")
 }
 
 func urlChecker() {

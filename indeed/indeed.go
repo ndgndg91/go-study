@@ -12,8 +12,6 @@ import (
 	"github.com/PuerkitoBio/goquery"
 )
 
-var baseURL string = "https://kr.indeed.com/jobs?q=java&limit=50"
-
 type extractedJob struct {
 	id       string
 	title    string
@@ -22,15 +20,16 @@ type extractedJob struct {
 	summary  string
 }
 
-// Start the extract job
-func Start() {
+// Scrape the extract job
+func Scrape(term string) {
+	var baseURL string = "https://kr.indeed.com/jobs?q=" + term + "&limit=50"
 	var jobs []extractedJob
-	totalPages := getPages()
+	totalPages := getPages(baseURL)
 	fmt.Println(totalPages)
 
 	pc := make(chan []extractedJob)
 	for i := 0; i < totalPages; i++ {
-		go getPage(i, pc)
+		go getPage(baseURL, i, pc)
 	}
 
 	for i := 0; i < totalPages; i++ {
@@ -70,7 +69,7 @@ func convertSlice(job extractedJob, c chan<- []string) {
 	c <- jobSlice
 }
 
-func getPage(pageNumber int, pc chan<- []extractedJob) {
+func getPage(baseURL string, pageNumber int, pc chan<- []extractedJob) {
 	var jobs []extractedJob
 	c := make(chan extractedJob)
 	pageURL := baseURL + "&start=" + strconv.Itoa(pageNumber*50)
@@ -114,7 +113,7 @@ func cleanString(str string) string {
 	return strings.Join(strings.Fields(strings.TrimSpace(str)), " ")
 }
 
-func getPages() int {
+func getPages(baseURL string) int {
 	pages := 0
 	res, err := http.Get(baseURL)
 	checkErr(err)
