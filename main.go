@@ -3,7 +3,10 @@ package main
 import (
 	"fmt"
 	"log"
+	"strings"
 
+	"github.com/labstack/echo"
+	"github.com/labstack/echo/middleware"
 	"github.com/ndgndg91/go-study/banking"
 	"github.com/ndgndg91/go-study/channel"
 	"github.com/ndgndg91/go-study/facade"
@@ -13,7 +16,31 @@ import (
 )
 
 func main() {
+	// Echo instance
+	e := echo.New()
+
+	// Middleware
+	e.Use(middleware.Logger())
+	e.Use(middleware.Recover())
+
+	// Routes
+	e.GET("/", handleHome)
+	e.POST("/scrape", handleScrape)
+
+	// Start server
+	e.Logger.Fatal(e.Start(":1323"))
 	indeed.Scrape("java")
+}
+
+// Handler
+func handleHome(c echo.Context) error {
+	return c.File("home.html")
+}
+
+func handleScrape(c echo.Context) error {
+	term := strings.ToLower(strings.Join(strings.Fields(strings.TrimSpace(c.FormValue("term"))), " "))
+	fmt.Println(term)
+	return nil
 }
 
 func indeedExtractStart() {
