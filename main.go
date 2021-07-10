@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"github.com/ndgndg91/go-study/advancedfunc"
+	"github.com/ndgndg91/go-study/datastructure"
 	"log"
 	"os"
 	"strings"
@@ -20,7 +21,11 @@ import (
 const fileName = "jobs.csv"
 
 func main() {
-	funcType()
+	dataStructure()
+}
+
+func dataStructure()  {
+	datastructure.LinkedList()
 }
 
 func funcType() {
