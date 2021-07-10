@@ -31,3 +31,19 @@ func CaptureLoop2() {
 		f[i]()
 	}
 }
+
+type opFunc func(a, b int) int
+
+func GetOp(op string) opFunc {
+	if op == "+" {
+		return func(a, b int) int {
+			return a + b
+		}
+	} else if op == "*" {
+		return func(a, b int) int {
+			return a * b
+		}
+	} else {
+		return nil
+	}
+}

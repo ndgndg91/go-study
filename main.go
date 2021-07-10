@@ -20,8 +20,13 @@ import (
 const fileName = "jobs.csv"
 
 func main() {
-	funcLiteral()
+	funcType()
+}
 
+func funcType() {
+	fn := funcliteral.GetOp("*")
+	result := fn(3, 4)
+	println("3 * 4 = ", result)
 }
 
 func funcLiteral() {
