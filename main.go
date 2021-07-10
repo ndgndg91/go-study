@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"github.com/ndgndg91/go-study/funcliteral"
 	"log"
 	"os"
 	"strings"
@@ -19,6 +20,16 @@ import (
 const fileName = "jobs.csv"
 
 func main() {
+	funcLiteral()
+
+}
+
+func funcLiteral() {
+	funcliteral.CaptureLoop()
+	funcliteral.CaptureLoop2()
+}
+
+func runEcho() {
 	// Echo instance
 	e := echo.New()
 
