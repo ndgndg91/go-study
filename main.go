@@ -24,8 +24,9 @@ func main() {
 	dataStructure()
 }
 
-func dataStructure()  {
+func dataStructure() {
 	datastructure.LinkedList()
+	datastructure.QueueDrive()
 }
 
 func funcType() {
