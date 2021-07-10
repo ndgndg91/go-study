@@ -1,4 +1,4 @@
-package funcliteral
+package advancedfunc
 
 import "fmt"
 
@@ -32,9 +32,9 @@ func CaptureLoop2() {
 	}
 }
 
-type opFunc func(a, b int) int
+type OpFunc func(a, b int) int
 
-func GetOp(op string) opFunc {
+func GetOp(op string) OpFunc {
 	if op == "+" {
 		return func(a, b int) int {
 			return a + b
@@ -46,4 +46,20 @@ func GetOp(op string) opFunc {
 	} else {
 		return nil
 	}
+}
+
+type Writer func(string)
+
+func WriteHello(writer Writer) {
+	writer("Hello World!")
+}
+
+func Sum(nums ...int) int {
+	sum := 0
+
+	fmt.Printf("nums 타입 : %T\n", nums)
+	for _, v := range nums {
+		sum += v
+	}
+	return sum
 }

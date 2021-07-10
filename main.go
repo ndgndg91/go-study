@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/ndgndg91/go-study/funcliteral"
+	"github.com/ndgndg91/go-study/advancedfunc"
 	"log"
 	"os"
 	"strings"
@@ -24,14 +24,40 @@ func main() {
 }
 
 func funcType() {
-	fn := funcliteral.GetOp("*")
+	println("1 + 2 + 3  = ", advancedfunc.Sum(1, 2, 3))
+	fn := advancedfunc.GetOp("*")
 	result := fn(3, 4)
 	println("3 * 4 = ", result)
-}
 
-func funcLiteral() {
-	funcliteral.CaptureLoop()
-	funcliteral.CaptureLoop2()
+	advancedfunc.CaptureLoop()
+	advancedfunc.CaptureLoop2()
+
+	f, err := os.Create("test.txt")
+	if err != nil {
+		fmt.Println("Failed to create a file")
+		return
+	}
+
+	defer func() {
+		println("last defer called")
+	}()
+
+	defer func(f *os.File) {
+		println("second defer called")
+		err := f.Close()
+		if err != nil {
+
+		}
+	}(f)
+
+	defer func() {
+		println("first defer called")
+	}()
+
+	advancedfunc.WriteHello(func(msg string) {
+		fmt.Fprintln(f, msg)
+	})
+
 }
 
 func runEcho() {
