@@ -28,6 +28,7 @@ func dataStructure() {
 	datastructure.LinkedList()
 	datastructure.QueueDrive()
 	datastructure.StackDrive()
+	datastructure.RingDrive()
 }
 
 func funcType() {
