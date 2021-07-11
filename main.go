@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"github.com/ndgndg91/go-study/advancedfunc"
 	"github.com/ndgndg91/go-study/datastructure"
+	"github.com/ndgndg91/go-study/handleerror"
 	"log"
 	"os"
 	"strings"
@@ -21,7 +22,11 @@ import (
 const fileName = "jobs.csv"
 
 func main() {
-	dataStructure()
+	handleErrors()
+}
+
+func handleErrors() {
+	handleerror.Drive()
 }
 
 func dataStructure() {
