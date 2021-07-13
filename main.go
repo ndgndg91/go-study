@@ -23,7 +23,11 @@ import (
 const fileName = "jobs.csv"
 
 func main() {
-	deadLockIssues()
+	bestPractice()
+}
+
+func bestPractice() {
+	goroutine.BPDrive()
 }
 
 func deadLockIssues() {
