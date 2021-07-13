@@ -23,7 +23,11 @@ import (
 const fileName = "jobs.csv"
 
 func main() {
-	handleErrors()
+	concurrencyIssues()
+}
+
+func concurrencyIssues() {
+	goroutine.ConcurrencyIssues()
 }
 
 func handleErrors() {
