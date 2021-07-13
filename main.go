@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"github.com/ndgndg91/go-study/advancedfunc"
 	"github.com/ndgndg91/go-study/datastructure"
+	"github.com/ndgndg91/go-study/goroutine"
 	"github.com/ndgndg91/go-study/handleerror"
 	"log"
 	"os"
@@ -26,6 +27,10 @@ func main() {
 }
 
 func handleErrors() {
+	goroutine.Drive()
+}
+
+func handleError() {
 	handleerror.Drive()
 }
 
