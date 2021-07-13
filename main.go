@@ -23,7 +23,11 @@ import (
 const fileName = "jobs.csv"
 
 func main() {
-	concurrencyIssues()
+	deadLockIssues()
+}
+
+func deadLockIssues() {
+	goroutine.DeadLockExample()
 }
 
 func concurrencyIssues() {
