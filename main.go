@@ -23,15 +23,19 @@ import (
 const fileName = "jobs.csv"
 
 func main() {
-	channelWaitingAndHandleAndDeadLock()
+	resolveZombieRoutine()
 }
 
-func channelWaitingAndHandleAndDeadLock() {
-	channel.WaitingAndHandleAndDeadLock()
+func resolveZombieRoutine() {
+	channel.ResolveZombieRoutine()
 }
 
-func channelDeadLock() {
-	channel.DeadLockExample()
+func zombieRoutine2() {
+	channel.ZombieRoutine2()
+}
+
+func zombieRoutine() {
+	channel.ZombieRoutine()
 }
 
 func channelBasic() {

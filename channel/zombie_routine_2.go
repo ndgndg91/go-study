@@ -14,7 +14,7 @@ func waitingSquare(wg *sync.WaitGroup, ch chan int) {
 	wg.Done() // 실행되지 않는다.
 }
 
-func WaitingAndHandleAndDeadLock() {
+func ZombieRoutine2() {
 	var wg sync.WaitGroup
 	ch := make(chan int)
 
