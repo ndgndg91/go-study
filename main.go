@@ -23,7 +23,11 @@ import (
 const fileName = "jobs.csv"
 
 func main() {
-	bestPractice()
+	channelBasic()
+}
+
+func channelBasic() {
+	channel.BasicDrive()
 }
 
 func bestPractice() {
