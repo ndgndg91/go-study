@@ -23,7 +23,11 @@ import (
 const fileName = "jobs.csv"
 
 func main() {
-	channelBasic()
+	channelDeadLock()
+}
+
+func channelDeadLock() {
+	channel.DeadLockExample()
 }
 
 func channelBasic() {
