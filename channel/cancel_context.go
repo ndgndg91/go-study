@@ -11,10 +11,11 @@ var cwg sync.WaitGroup
 
 func CancelContext() {
 	cwg.Add(1)
-	ctx, cancelFunc := context.WithCancel(context.Background())
+	ctx, _ := context.WithTimeout(context.Background(), 3*time.Second) // 작업 시간 3초 동안만 실행
+	//ctx, cancelFunc := context.WithCancel(context.Background())
 	go printEverySecond(ctx)
-	time.Sleep(5 * time.Second)
-	cancelFunc()
+	//time.Sleep(5 * time.Second)
+	//cancelFunc()
 
 	cwg.Wait()
 }
