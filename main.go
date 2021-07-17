@@ -23,7 +23,11 @@ import (
 const fileName = "jobs.csv"
 
 func main() {
-	tickChannel()
+	divideRole()
+}
+
+func divideRole() {
+	channel.MakeCar()
 }
 
 func tickChannel() {
