@@ -23,7 +23,11 @@ import (
 const fileName = "jobs.csv"
 
 func main() {
-	divideRole()
+	cancelContext()
+}
+
+func cancelContext() {
+	channel.CancelContext()
 }
 
 func divideRole() {
