@@ -23,7 +23,11 @@ import (
 const fileName = "jobs.csv"
 
 func main() {
-	cancelContext()
+	contextWithValue()
+}
+
+func contextWithValue() {
+	channel.WithValue()
 }
 
 func cancelContext() {
