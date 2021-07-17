@@ -23,7 +23,11 @@ import (
 const fileName = "jobs.csv"
 
 func main() {
-	resolveZombieRoutine()
+	selectClause()
+}
+
+func selectClause() {
+	channel.DriveSelect()
 }
 
 func resolveZombieRoutine() {
