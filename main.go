@@ -23,7 +23,11 @@ import (
 const fileName = "jobs.csv"
 
 func main() {
-	selectClause()
+	tickChannel()
+}
+
+func tickChannel() {
+	channel.TickDrive()
 }
 
 func selectClause() {
