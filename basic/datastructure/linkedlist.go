@@ -12,7 +12,7 @@ func LinkedList() {
 	v.InsertBefore(3, e4)
 	v.InsertAfter(2, e1)
 
-	for e:= v.Front(); e != nil; e = e.Next() {
+	for e := v.Front(); e != nil; e = e.Next() {
 		fmt.Print(e.Value, " ")
 	}
 
@@ -21,4 +21,3 @@ func LinkedList() {
 		fmt.Print(e.Value, " ")
 	}
 }
-

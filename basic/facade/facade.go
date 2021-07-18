@@ -1,10 +1,9 @@
 package facade
 
 import (
+	"basic/hello"
+	"basic/syntax"
 	"fmt"
-
-	"github.com/ndgndg91/go-study/hello"
-	"github.com/ndgndg91/go-study/syntax"
 )
 
 // HelloGo : hello Go!

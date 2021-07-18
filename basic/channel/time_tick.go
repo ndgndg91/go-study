@@ -7,7 +7,7 @@ import (
 )
 
 func tickSquare(wg *sync.WaitGroup, ch chan int) {
-	tick := time.Tick(time.Second) // 1초 간격으로 신호를 보내주는 채널
+	tick := time.Tick(time.Second)            // 1초 간격으로 신호를 보내주는 채널
 	terminate := time.After(10 * time.Second) // 10 초 후에 신홀을 보내주는 채널
 
 	for {

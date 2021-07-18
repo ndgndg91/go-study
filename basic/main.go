@@ -1,23 +1,22 @@
 package main
 
 import (
+	"basic/advancedfunc"
+	"basic/banking"
+	"basic/channel"
+	"basic/datastructure"
+	"basic/facade"
+	"basic/goroutine"
+	"basic/handleerror"
+	"basic/indeed"
+	"basic/mydict"
+	"basic/urlchecker"
 	"fmt"
-	"github.com/ndgndg91/go-study/advancedfunc"
-	"github.com/ndgndg91/go-study/datastructure"
-	"github.com/ndgndg91/go-study/goroutine"
-	"github.com/ndgndg91/go-study/handleerror"
+	"github.com/labstack/echo"
+	"github.com/labstack/echo/middleware"
 	"log"
 	"os"
 	"strings"
-
-	"github.com/labstack/echo"
-	"github.com/labstack/echo/middleware"
-	"github.com/ndgndg91/go-study/banking"
-	"github.com/ndgndg91/go-study/channel"
-	"github.com/ndgndg91/go-study/facade"
-	"github.com/ndgndg91/go-study/indeed"
-	"github.com/ndgndg91/go-study/mydict"
-	"github.com/ndgndg91/go-study/urlchecker"
 )
 
 const fileName = "jobs.csv"
